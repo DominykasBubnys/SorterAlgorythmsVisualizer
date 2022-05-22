@@ -1,0 +1,19 @@
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.array_container{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+
+.array_bar{
+    background-color: rgb(38, 42, 121);
+    display: inline-block;
+    width: 3px;
+    margin: 0 1px;
+}
