@@ -1,6 +1,8 @@
 import React from 'react'
 import classes from "./SortingVisualizer.module.css";
 import mergeSort from './SortngAlgorythms/MergeSort';
+// import bubbleSort from './SortngAlgorythms/BubbleSort';
+
 
 class SortingVisualizer extends React.Component{
     constructor(props){
@@ -18,8 +20,8 @@ class SortingVisualizer extends React.Component{
     resetArray(){
         const array = [];
 
-        for(let i = 0; i < 200; i++){
-            array.push(randomIntFromInterval(5,550));
+        for(let i = 0; i < 20; i++){
+            array.push(randomIntFromInterval(1,25));
         }
 
         this.setState({array});
@@ -32,11 +34,21 @@ class SortingVisualizer extends React.Component{
         console.log("Sorted: ", sortedArray);
     }
 
-    heapSort(){
+    bubbleSort(){
+        // const animations = bubbleSort(this.state.array);
+
+        // for(let i = 0; i < animations.length; i++){
+
+        //     setTimeout(() => {
+                
+        //         console.log('kazkas: ', animations[i])
+
+        //     }, i * 100);
+        // }
 
     }
 
-    bubbleSort(){
+    heapSort(){
 
     }
 
@@ -44,20 +56,25 @@ class SortingVisualizer extends React.Component{
         const {array} = this.state;
 
         return (
+            <>
             <div className={classes.array_container}>
-                <div className={classes.header}>
-                    <button onClick={() => this.resetArray()}>Reset array</button>
-                    <button onClick={() => this.mergeSort()}>Merge sort</button>
-                </div>
+                
                 {array.map((numb, index) => (
                     <div 
                         className={classes.array_bar} 
-                        style={{height:`${numb}px`}}
+                        style={{height:`${numb * 20}px`}}
                         key={index}
-                    ></div>
+                    >{numb}</div>
                 )
                 )}
             </div>
+
+            <div className={classes.header}>
+                <button onClick={() => this.resetArray()}>Reset array</button>
+                <button onClick={() => this.bubbleSort()}>Bubble sort</button>
+            </div>
+
+            </>
         )
     }
 
