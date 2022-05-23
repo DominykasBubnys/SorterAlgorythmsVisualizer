@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from "./SortingVisualizer.module.css";
+import mergeSort from './SortngAlgorythms/MergeSort';
 
 class SortingVisualizer extends React.Component{
     constructor(props){
@@ -17,15 +18,18 @@ class SortingVisualizer extends React.Component{
     resetArray(){
         const array = [];
 
-        for(let i = 0; i < 300; i++){
-            array.push(randomIntFromInterval(5,630));
+        for(let i = 0; i < 200; i++){
+            array.push(randomIntFromInterval(5,550));
         }
 
         this.setState({array});
     }
 
     mergeSort(){
+        const sortedArray = mergeSort(this.state.array);
 
+        console.log("Array: ", this.state.array);
+        console.log("Sorted: ", sortedArray);
     }
 
     heapSort(){
@@ -39,14 +43,11 @@ class SortingVisualizer extends React.Component{
     render(){
         const {array} = this.state;
 
-
-        // this.resetArray()
-
-        console.log("masyvas: ", array)
         return (
             <div className={classes.array_container}>
                 <div className={classes.header}>
                     <button onClick={() => this.resetArray()}>Reset array</button>
+                    <button onClick={() => this.mergeSort()}>Merge sort</button>
                 </div>
                 {array.map((numb, index) => (
                     <div 
@@ -66,5 +67,6 @@ class SortingVisualizer extends React.Component{
 const randomIntFromInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
 
 export default SortingVisualizer
