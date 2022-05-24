@@ -1,7 +1,7 @@
 import React from 'react'
-import classes from "./SortingVisualizer.module.css";
-import mergeSort from './SortngAlgorythms/MergeSort';
-// import bubbleSort from './SortngAlgorythms/BubbleSort';
+import "./SortingVisualizer.css"
+// import getMergeSortAnimations from "../SortingVisualizer/SortngAlgorythms/MergeSort"
+import bubbleSort from './SortngAlgorythms/BubbleSort';
 
 
 class SortingVisualizer extends React.Component{
@@ -28,23 +28,24 @@ class SortingVisualizer extends React.Component{
     }
 
     mergeSort(){
-        const sortedArray = mergeSort(this.state.array);
-
-        console.log("Array: ", this.state.array);
-        console.log("Sorted: ", sortedArray);
+        
     }
 
     bubbleSort(){
-        // const animations = bubbleSort(this.state.array);
 
-        // for(let i = 0; i < animations.length; i++){
+        const animations = bubbleSort(this.state.array);
 
-        //     setTimeout(() => {
-                
-        //         console.log('kazkas: ', animations[i])
+        for(let i = 0; i < animations.length; i++){//animations.length
 
-        //     }, i * 100);
-        // }
+
+            setTimeout(() => {
+
+                const arrayBars = document.getElementsByClassName("array-bar");
+
+                arrayBars[i].style.backgroundColor = "red"
+
+            }, i * 200);
+        }
 
     }
 
@@ -57,11 +58,11 @@ class SortingVisualizer extends React.Component{
 
         return (
             <>
-            <div className={classes.array_container}>
+            <div className="array-container">
                 
                 {array.map((numb, index) => (
                     <div 
-                        className={classes.array_bar} 
+                        className="array-bar"
                         style={{height:`${numb * 20}px`}}
                         key={index}
                     >{numb}</div>
@@ -69,7 +70,7 @@ class SortingVisualizer extends React.Component{
                 )}
             </div>
 
-            <div className={classes.header}>
+            <div className="header">
                 <button onClick={() => this.resetArray()}>Reset array</button>
                 <button onClick={() => this.bubbleSort()}>Bubble sort</button>
             </div>

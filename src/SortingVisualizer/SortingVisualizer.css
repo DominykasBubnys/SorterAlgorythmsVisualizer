@@ -5,7 +5,7 @@
     padding: 20px;
 }
 
-.array_container{
+.array-container{
     margin-top: 15vh;
     width: 100%;
     text-align: center;
@@ -16,7 +16,7 @@
 }
 
 
-.array_bar{
+.array-bar{
     background-color: rgb(38, 42, 121);
     display: inline-block;
     width: 3rem;
