@@ -1,12 +1,35 @@
+.container{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.main-header{
+    padding-top: 4px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.main-header h1{
+    font-size: 2.7em;
+    color: rgb(165, 159, 159);
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(250, 115, 135, 0.2);
+}
+
 .header{
+    padding: 2rem;
     display: flex;
     justify-content: space-around;
-    background-color: brown;
-    padding: 20px;
+    background-color:#212121
+
 }
 
 .array-container{
-    margin-top: 15vh;
     width: 100%;
     text-align: center;
     display: flex;
@@ -17,7 +40,9 @@
 
 
 .array-bar{
-    background-color: rgb(38, 42, 121);
+    background-color: rgb(17, 19, 46);
+    background-color:#212121;
+    border-top: 1px solid red;
     display: inline-block;
     width: 2px;
     margin: 0 1px;
@@ -28,4 +53,15 @@ button{
     border: none;
     padding: 8px;
     border-radius: 10px;
+    background-color:#62221f74;
+    color: rgb(165, 159, 159);
+    letter-spacing: 1.5px;
+    font-style: italic;
+    font-weight: bold;
+
+}
+
+button:hover{
+    background-color:#62221fdd;
+
 }

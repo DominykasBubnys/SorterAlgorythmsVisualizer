@@ -92,30 +92,35 @@ class SortingVisualizer extends React.Component{
         const {array} = this.state;
 
         return (
-            <>
-            <div className="array-container">
-                
-                {array.map((numb, index) => (
-                    // <div 
-                    //     className="array-bar"
-                    //     style={{height:`${numb * 20}px`}}
-                    //     key={index}
-                    // >{numb}</div>
-                    <div 
-                        className="array-bar"
-                        style={{height:`${numb * 20}px`}}
-                        key={index}
-                    ></div>
-                )
-                )}
-            </div>
+            <div className='container'>
 
-            <div className="header">
-                <button onClick={() => this.resetArray()}>Reset array</button>
-                <button onClick={() => this.mergeSort()}>merge sort</button>
-            </div>
+                <div className='main-header'>
+                    <h1>Sorting algorithm visualization</h1>
+                </div>
 
-            </>
+                <div className="array-container">
+                    
+                    {array.map((numb, index) => (
+                        // <div 
+                        //     className="array-bar"
+                        //     style={{height:`${numb * 20}px`}}
+                        //     key={index}
+                        // >{numb}</div>
+                        <div 
+                            className="array-bar"
+                            style={{height:`${numb * 20}px`}}
+                            key={index}
+                        ></div>
+                    )
+                    )}
+                </div>
+
+                <div className="header">
+                    <button onClick={() => this.resetArray()}>Reset array</button>
+                    <button onClick={() => this.mergeSort()}>merge sort</button>
+                </div>
+
+            </div>
         )
     }
 
