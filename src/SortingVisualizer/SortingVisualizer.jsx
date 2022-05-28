@@ -5,13 +5,13 @@ import bubbleSort from './SortngAlgorythms/BubbleSort';
 
 
 // Change this value for the speed of the animations.
-const ANIMATION_SPEED_MS = 5;
+const ANIMATION_SPEED_MS = 3;
 
 // Change this value for the number of bars (value) in the array.
 const NUMBER_OF_ARRAY_BARS = 300;
 
 // This is the main color of the array bars.
-const PRIMARY_COLOR = 'turquoise';
+const PRIMARY_COLOR = 'rgba(250, 115, 135, 0.2)';
 
 // This is the color of array bars that are being compared throughout the animations.
 const SECONDARY_COLOR = 'red';
@@ -34,7 +34,7 @@ class SortingVisualizer extends React.Component{
         const array = [];
 
         for(let i = 0; i < NUMBER_OF_ARRAY_BARS; i++){
-            array.push(randomIntFromInterval(1,25));
+            array.push(randomIntFromInterval(1,480));
         }
 
         this.setState({array});
@@ -60,7 +60,7 @@ class SortingVisualizer extends React.Component{
                     // console.log("ELSE. animation: ", animations[i]);
                     const [barOneIdx, newHeight] = animations[i];
                     const barOneStyle = arrayBars[barOneIdx].style;
-                    barOneStyle.height = `${newHeight * 20}px`;
+                    barOneStyle.height = `${newHeight}px`;
                 }, i * ANIMATION_SPEED_MS);
             }
         }
@@ -108,7 +108,7 @@ class SortingVisualizer extends React.Component{
                         // >{numb}</div>
                         <div 
                             className="array-bar"
-                            style={{height:`${numb * 20}px`}}
+                            style={{height:`${numb}px`}}
                             key={index}
                         ></div>
                     )

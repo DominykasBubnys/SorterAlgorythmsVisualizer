@@ -7,7 +7,7 @@
 }
 
 .main-header{
-    padding-top: 4px;
+    padding-top: 2rem;
     text-align: center;
     position: fixed;
     top: 0;
@@ -25,8 +25,8 @@
     padding: 2rem;
     display: flex;
     justify-content: space-around;
-    background-color:#212121
-
+    background-color:#130404;
+    border-top: 1px solid #212121;
 }
 
 .array-container{
@@ -40,7 +40,6 @@
 
 
 .array-bar{
-    background-color: rgb(17, 19, 46);
     background-color:#212121;
     border-top: 1px solid red;
     display: inline-block;
